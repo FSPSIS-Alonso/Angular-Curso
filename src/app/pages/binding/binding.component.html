@@ -1,0 +1,19 @@
+@if (listCount<=2) {
+<label> Pon tu valor </label>
+<input type="text" [(ngModel)]="valorUsuario" />
+
+<!-- <h3>{{ valorUsuario }}</h3> -->
+
+<button (click)="fireAlert()">DAME CLICK</button>
+<button (click)="hideSection()">OCULTAR</button>
+
+@if (visible) {
+
+<app-todo-list
+  [text]="aux"
+  [emitterTodoList]="emitter"
+  (todoListCount)="outputChild($event)"
+></app-todo-list>
+}@else{
+<h4>NO TIENES VALORES</h4>
+} }
