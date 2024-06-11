@@ -1,0 +1,19 @@
+<p>pipes works!</p>
+
+<div>{{ price | currency : "€" : false : "1.2-4" }}</div>
+<div>{{ priceFloat | number : "4.2-4" }}</div>
+<div>{{ priceFloat | percent }}</div>
+<div>{{ name | lowercase }}</div>
+<div>{{ nameLower | uppercase }}</div>
+<div>{{ person | json }}</div>
+<div>{{ today | date : "YYYY MM dd" }}</div>
+
+<div>{{ today | date : "full" }}</div>
+<div>{{ today | date : "medium" }}</div>
+<div>{{ numbers }}</div>
+
+<div>{{ "Hola" | concatValue : "mundo" }}</div>
+<div>{{ "Adios" | concatValue }}</div>
+
+<div>{{ numbers | getUrl }}</div>
+<div>{{ numbers | getUrl : "test" }}</div>

@@ -12,3 +12,26 @@
 
 <app-name-list></app-name-list> -->
 <h2>Main</h2>
+<!-- <app-proyeccion>
+  <h2 class="h2">hola desde padre</h2>
+  <input type="text" [(ngModel)]="name" />
+  <button (click)="showText()">Click</button>
+</app-proyeccion> -->
+
+<!-- <app-bidirectinal [(name)]="name"></app-bidirectinal>
+<button (click)="showText()">Click</button> -->
+<!-- <app-pipes></app-pipes> -->
+<div>
+  <a routerLink="/pipes">Pipes</a>
+  <br />
+  <a routerLink="/bidi">Bidi</a>
+  <br />
+  <a routerLink="/proyec/1/hola.com">Proye</a>
+  <a [routerLink]="['/proyec', getData(), 'hola.com']">Proye</a>
+  <br />
+  <a routerLink="/binding">Binding</a>
+  <br />
+  <a routerLink="/home">Binding</a>
+</div>
+
+<router-outlet></router-outlet>
