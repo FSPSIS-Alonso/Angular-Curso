@@ -13,9 +13,6 @@ export class TodoListComponent {
   private _todoList: string[] = [];
 
   constructor() {
-    // console.log(this.text);
-    // console.log(this._todoList);
-
     console.log('Constructor');
   }
 

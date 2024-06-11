@@ -1,0 +1,15 @@
+<label> Agrega amigo </label>
+<input type="text" [(ngModel)]="valorName" />
+<button (click)="addName()">Agregar</button>
+
+@if (nameList.length>0) {
+
+<ul>
+  @for(item of nameList; track $index){
+  <app-name-item [name]="item" (delete)="deleteName($event)"></app-name-item>
+
+  }
+</ul>
+}@else{
+<p>No tienes amigos</p>
+}
