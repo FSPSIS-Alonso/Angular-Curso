@@ -10,7 +10,8 @@ import { BidirectinalComponent } from './bidirectinal/bidirectinal.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { PipesModule } from '../pipes/pipes.module';
 import { HomeComponent } from './home.component';
-import { BrowserModule } from '@angular/platform-browser';
+import { HomeRoutingModule } from './home.routing';
+import { AuthService } from '../services/auth.service';
 
 @NgModule({
   declarations: [
@@ -24,11 +25,11 @@ import { BrowserModule } from '@angular/platform-browser';
   ],
   imports: [
     CommonModule,
-    BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     ComponentsModule,
     PipesModule,
+    HomeRoutingModule,
   ],
   exports: [
     CounterComponent,
@@ -38,5 +39,6 @@ import { BrowserModule } from '@angular/platform-browser';
     BidirectinalComponent,
     PipesComponent,
   ],
+  providers: [AuthService],
 })
 export class PagesModule {}

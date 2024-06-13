@@ -21,7 +21,7 @@
 <!-- <app-bidirectinal [(name)]="name"></app-bidirectinal>
 <button (click)="showText()">Click</button> -->
 <!-- <app-pipes></app-pipes> -->
-<div>
+<!-- <div>
   <a routerLink="/pipes">Pipes</a>
   <br />
   <a routerLink="/bidi">Bidi</a>
@@ -32,6 +32,17 @@
   <a routerLink="/binding">Binding</a>
   <br />
   <a routerLink="/home">Binding</a>
+</div> -->
+
+<div>
+  {{ isAuthUser }}
+  <button (click)="giveAcces()">DAR ACCESO</button>
 </div>
+
+<a routerLink="/home">Home</a>
+<br />
+<a routerLink="/home/bidi">Home - bidi</a>
+<br />
+<a routerLink="/home/pipe">Home - pipe</a>
 
 <router-outlet></router-outlet>

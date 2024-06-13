@@ -5,21 +5,35 @@ import { BindingComponent } from './pages/binding/binding.component';
 import { BidirectinalComponent } from './pages/bidirectinal/bidirectinal.component';
 import { ProyeccionComponent } from './pages/proyeccion/proyeccion.component';
 import { NameListComponent } from './pages/name-list/name-list.component';
+import { authGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   // { path: 'pipes', component: PipesComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  // { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
-    path: 'pipes',
-    children: [
-      { path: '', component: BindingComponent },
-      { path: 'pipes', component: PipesComponent },
-    ],
+    path: 'home',
+    data: { Title: 'PAGINA INICIAL', code: 'xf1234' },
+    canActivate: [authGuard],
+    loadChildren: () =>
+      import('./pages/pages.module').then((m) => m.PagesModule),
   },
-  { path: 'binding', component: BindingComponent },
-  { path: 'bidi', component: BidirectinalComponent },
-  { path: 'proyec/:idUser/:url', component: ProyeccionComponent },
-  { path: '**', redirectTo: 'pipes' },
+  // {
+  //   path: 'auth',
+  //   loadChildren: () =>
+  //     import('./pages/pages.module').then((m) => m.PagesModule),
+  // },
+
+  // {
+  //   path: 'pipes',
+  //   children: [
+  //     { path: '', component: BindingComponent },
+  //     { path: 'pipes', component: PipesComponent },
+  //   ],
+  // },
+  // { path: 'binding', component: BindingComponent },
+  // { path: 'bidi', component: BidirectinalComponent },
+  // { path: 'proyec/:idUser/:url', component: ProyeccionComponent },
+  // { path: '**', redirectTo: 'pipes' },
 ];
 
 @NgModule({
